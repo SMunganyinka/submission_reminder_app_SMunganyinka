@@ -1,10 +1,10 @@
-student,assignment,submission status
+student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
 Chiagoziem, Git, submitted
 Divine, Shell Navigation, not submitted
 Anissa, Shell Basics, submitted
-John,Shell Navigation,Submitted
-Jane,Git,Not submitted
-Alex,Shell Basics,Submitted
-Emma,Shell Navigation,Not submitted
-Michael,Shell Basics,Submitted
+Tullah, Git, submitted
+Shamim, Shell Navigations, submitted
+Shaban, Shell Basics, not submitted
+Shanessa, Git, submitted
+Shania, Shell Navigations, not submitted
