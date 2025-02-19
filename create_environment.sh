@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Prompt user for their name
-read -r -p "Enter your name: " username
+read -p "Enter your name: " user_name
 
-main_dir="submission_reminder_$username"
-mkdir -p "$main_dir"
+main_dir="submission_reminder_$user_name"
+mkdir -p $main_dir
 #Create subdirectories
-mkdir -p "$main_dir"/app "$main_dir/"modules "$main_dir"/assets "$main_dir"/config
+mkdir -p $main_dir/app $main_dir/modules $main_dir/assets $main_dir/config
 #Create reminder.sh script
-cat << 'EOF' > "$main_dir"/app/reminder.sh
+cat << 'EOF' > $main_dir/app/reminder.sh
 #!/bin/bash
 
 # Source environment variables and helper functions
@@ -26,7 +26,7 @@ echo "--------------------------------------------"
 check_submissions $submissions_file
 
 EOF
-cat << 'EOF' > "$main_dir"/modules/functions.sh
+cat << 'EOF' > $main_dir/modules/functions.sh
 #!/bin/bash
 
 # Function to read submissions file and output students who have not submitted
@@ -51,7 +51,7 @@ function check_submissions {
 }
 
 EOF
-cat << 'EOF' > "$main_dir"/assets/submissions.txt
+cat << 'EOF' > $main_dir/assets/submissions.txt
 student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
 Chiagoziem, Git, submitted
@@ -63,20 +63,20 @@ Shaban, Shell Basics, not submitted
 Shanessa, Git, submitted
 Shania, Shell Navigations, not submitted
 EOF
-cat << 'EOF' > "$main_dir"/config/config.env
+cat << 'EOF' > $main_dir/config/config.env
 
 # This is the config file
 ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
 EOF
-cat << 'EOF' > "$main_dir"/startup.sh
+cat << 'EOF' > $main_dir/startup.sh
 #!/bin/bash
 # startup.sh - Starts the submission reminder application
 
 echo "Starting submission reminder application..."
-bash "$(dirname "$0")/app/reminder.sh"
+./$main_dir/app/reminder.sh
 EOF
 #Make all required files executable
-chmod +x "$main_dir"/startup.sh "$main_dir"/app/reminder.sh "$main_dir"/modules/functions.sh
+chmod +x $main_dir/startup.sh $main_dir/app/reminder.sh $main_dir/modules/functions.sh
 #success message
-echo "Reminder setup complete.  Run ./submission_reminder_$username/startup.sh to get your reminder."
+echo "hello $user_name Reminder setup complete.change directory to the $main_dir then  Run ./startup.sh to get your reminder."
