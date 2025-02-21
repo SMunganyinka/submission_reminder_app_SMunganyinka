@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Prompt user for their name
-read -p "Enter your name: " user_name
+read -p "Enter your name: " username
 
-main_dir="submission_reminder_$user_name"
+main_dir="submission_reminder_$username"
 mkdir -p $main_dir
 #Create subdirectories
 mkdir -p $main_dir/app $main_dir/modules $main_dir/assets $main_dir/config
@@ -79,4 +79,4 @@ EOF
 #Make all required files executable
 chmod +x $main_dir/startup.sh $main_dir/app/reminder.sh $main_dir/modules/functions.sh
 #success message
-echo "hello $user_name Reminder setup complete.change directory to the $main_dir then  Run ./startup.sh to get your reminder."
+echo "Reminder setup complete, change directory to the $main_dir then  Run ./startup.sh to get your reminder."

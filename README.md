@@ -79,7 +79,8 @@ config/config.env
 
 Stores assignment details and remaining days for submission.
 
-Example Output 
+Example Output
+
 Starting submission reminder application...
 Assignment: Shell Navigation
 Days remaining to submit: 2 days
